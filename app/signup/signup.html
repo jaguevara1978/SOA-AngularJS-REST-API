@@ -1,0 +1,72 @@
+<div class="well well-lg">
+    <h2>Sign me Up <small>I want to become a Member</small></h2>
+</div>
+
+
+<hr class="colorgraph">
+
+<form name="form"  ng-submit="vm.signup()" class="form-horizontal" role="form">
+
+    <div class="well well-lg">
+		<div class="form-group">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <input ng-model='vm.user.firstName' id="fname" name="fname" class="form-control input-lg" type="text" placeholder="My First name" required>
+        		<span ng-show="form.fname.$dirty && form.fname.$error.required" class="help-block">Come on! We'd like to know your first name</span>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <input ng-model='vm.user.lastName' id="lname" name="lname" class="form-control input-lg" type="text" placeholder="My Last name" required>
+        		<span ng-show="form.lname.$dirty && form.lname.$error.required" class="help-block">Your last name is important too</span>
+            </div>
+		</div>
+
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+    			<input ng-model="vm.user.email" type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="20" required>
+        		<span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">It would be cool to have your Email address</span>
+            </div>
+		</div>
+			<div class="row">
+				<!--div class="col-xs-4 col-sm-3 col-md-3">
+					<span class="button-checkbox">
+						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
+                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
+					</span>
+				</div-->
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					 By clicking <strong class="label label-primary">Sign me up</strong>, you agree to the <a href="" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
+				</div>
+			</div>
+    </div><!-- end well -->
+	<hr class="colorgraph">
+
+    <div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary btn-lg btn-block" busy>
+                Sign me up!  <i class="fa fa-user-plus"></i>
+                <busy-message>Sending data <i class="fa fa-refresh fa-spin"></i></busy-message>
+            </button>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+            <a class="btn btn-lg btn-success btn-lg btn-block" ng-href="#"><small >Oh wait!...I just have to </small>Sign In  <i class="fa fa-sign-in"></i></a>
+        </div>
+    </div>
+</form>
+
+
+<!-- Modal TODO WITH UI BOOTSTRAP-->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+			</div>
+			<div class="modal-body">
+				<p>We are working on it</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

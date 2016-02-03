@@ -1,0 +1,151 @@
+<script >
+    //     thermometer( );
+/*
+    $('#fixture').thermometer( {
+        pathToSVG: 'bower_components/jquery-thermometer/svg/thermo-bottom.svg',
+        minValue: 0,
+        startValue: 85400,
+        maxValue: 100000,
+      	topText: "100.000",
+    	bottomText: "0",
+    	textColour: '#4C4C4C',
+	   	liquidColour: function( value ) {
+    		var red = ~~( value / 8 * 255 );
+    		var green = ~~( ( 8 - value ) / 8 * 255 );
+    		var decColor = 0x1000000 + 0x100*green + 0x10000*red ;
+    		alert('#'+decColor.toString(16).substr(1));
+    		return '#'+decColor.toString(16).substr(1);
+//     		return RGB2HTML(red,grn,0);
+    	},
+    	valueChanged: function(val) {
+    		//$( '#valueDisplay' ).text( val.toFixed( 0 ) );
+    	},
+  		onLoad: function() {
+    		//$('#fixture').thermometer( 'setTopText', '100.000' );
+    		//$('#fixture').thermometer( 'setLiquidColour', '100.000' );
+      		
+    		updateThermometer();
+    	}
+    } );
+
+    function updateThermometer() {
+		$('#fixture').thermometer( 'setValue', Math.random()*8 );
+		window.setTimeout( updateThermometer, 2500 );
+	}
+
+	function RGB2HTML(red, green, blue) {
+		var decColor = 0x1000000+blue + 0x100*green + 0x10000*red ;
+		return '#'+decColor.toString(16).substr(1);
+	}
+*/
+/*
+
+	$('#demo').thermometer( {
+        pathToSVG: 'bower_components/jquery-thermometer/svg/thermo-bottom.svg',
+		height: 300,
+		textColour: '#ffffff',
+		tickColour: '#ffffff',
+		liquidColour: function( value ) {
+			var red = ~~(value / 8 * 255);
+			var grn = ~~((8-value)/8 * 255);
+			return RGB2HTML(red,grn,0);
+		},
+		onLoad: function() {
+			updateThermometer();
+		}
+	} );
+*/
+</script>
+
+<!-- Page Heading -->
+<div class="well well-lg">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">My Rewards
+            </h1>
+        </div>
+    </div><!-- /.row -->
+</div>
+
+<!-- Page Content -->
+<div class="well well-lg">
+    <div class="row text-center">    
+        <!-- PRIZES -->
+        <div class="col-md-2 col-sm-3 col-lg-3">
+            <h3>My points: 85.400</h3>
+            <h3>Earn 14.600 more points to win this car</h3>
+            <div class="thumbnail">
+                <img src="content/images/grandprize.jpg">
+            </div>
+            <h3>Prize-O-meter <i class="fa fa-tachometer"></i></h3>
+            <p >
+                <div class="thumbnail">
+                    <img style="min-height: 400px;" src="content/images/thermometer.png">
+
+
+
+                    
+<!--
+		<h3 style="color: #4C4C4C;" id="valueDisplay"></h3>
+		<div id="fixture"></div>
+-->
+
+
+
+
+                </div>
+                <h3>Keep pushing for the big prize !</h3>
+            </p>
+        </div>
+    
+        <!-- COUPONS -->
+        <div class="col-md-10 col-sm-9 col-lg-9">
+            <div  ng-repeat="coupon in vm.coupons">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" >
+                    <div class="thumbnail">
+                        <img ng-src="content/images/coupon_logos/{{coupon.sponsor_logo}}"  class="img-responsive" alt="">
+                        <div class="caption">
+                            <h3 ng-bind="coupon.description"></h3>
+                            <p ng-bind="coupon.details"></p>
+                            <p>
+                                <a href="" class="btn btn-{{coupon.button.style}} btn-lg btn-block" ng-bind='coupon.button.text'></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Pagination -->
+            <div class="row text-center" >
+                <div class="col-lg-12">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#/rewards">&laquo;</a>
+                        </li>
+                        <li class="active">
+                            <a href="#/rewards">1</a>
+                        </li>
+                        <li>
+                            <a href="#/rewards">2</a>
+                        </li>
+                        <li>
+                            <a href="#/rewards">3</a>
+                        </li>
+                        <li>
+                            <a href="#/rewards">4</a>
+                        </li>
+                        <li>
+                            <a href="#/rewards">5</a>
+                        </li>
+                        <li>
+                            <a href="#/rewards">&raquo;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.row -->
+
+        </div><!-- /.row -->
+
+    </div><!-- /.row -->
+
+</div><!-- /.well -->
